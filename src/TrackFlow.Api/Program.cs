@@ -14,6 +14,17 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapControllers(); // Map attribute-routed controllers
+app.UseRouting();
+
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers().RequireHost("*").RequireCors();
+    endpoints.MapControllerRoute(
+        name: "default",
+        pattern: "api/v1/{controller=Home}/{action=Index}/{id?}");
+});
 
 app.Run();
