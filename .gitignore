@@ -482,3 +482,6 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+
+# Ignore appsettings.Development.json
+src/TrackFlow.Api/appsettings.Development.json
