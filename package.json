@@ -1,0 +1,15 @@
+{
+  "name": "trackflow",
+  "version": "1.0.0",
+  "description": "Scripts and utilities for the TrackFlow project",
+  "main": "index.js",
+  "scripts": {
+    "build": "dotnet build",
+    "start": "dotnet run --project src/TrackFlow.Api",
+    "test": "dotnet test",
+    "migrate": "dotnet ef database update --project src/TrackFlow.Infrastructure --startup-project src/TrackFlow.Api",
+    "add-migration": "dotnet ef migrations add"
+  },
+  "author": "",
+  "license": "MIT"
+}
