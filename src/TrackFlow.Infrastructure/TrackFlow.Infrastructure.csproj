@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TrackFlow.Domain\TrackFlow.Domain.csproj" />
+    <ProjectReference Include="..\TrackFlow.Application\TrackFlow.Application.csproj" />
   </ItemGroup>
 
   <ItemGroup>
