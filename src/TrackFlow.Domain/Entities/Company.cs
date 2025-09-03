@@ -3,18 +3,17 @@ using System.Collections.Generic;
 
 namespace TrackFlow.Domain.Entities
 {
-    public class User
+    public class Company
     {
         public Guid Id { get; set; }
-        public required string Email { get; set; } // UNIQUE
-        public string? PasswordHash { get; set; }
-        public required string DisplayName { get; set; }
-        public string? Timezone { get; set; }
+        public required string Name { get; set; }
+        public required string Slug { get; set; } // UNIQUE
         public DateTime CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
         public DateTime? DeletedAt { get; set; }
         // Navigation
         public ICollection<Membership> Memberships { get; set; } = new List<Membership>();
-        public ICollection<Star> Stars { get; set; } = new List<Star>();
+        public ICollection<Project> Projects { get; set; } = new List<Project>();
     }
 }
+
