@@ -39,6 +39,17 @@ namespace TrackFlow.Infrastructure.Data
             modelBuilder.Entity<CustomFieldValue>().HasKey(cf => new { cf.TicketId, cf.FieldDefId });
             modelBuilder.Entity<ProjectCounter>().HasKey(pc => pc.ProjectId);
 
+            // Configure relationships for Membership and Ticket
+            modelBuilder.Entity<Membership>()
+                .HasMany(m => m.ReportedTickets)
+                .WithOne(t => t.ReporterMembership)
+                .HasForeignKey(t => t.ReporterMembershipId);
+
+            modelBuilder.Entity<Membership>()
+                .HasMany(m => m.AssignedTickets)
+                .WithOne(t => t.AssigneeMembership)
+                .HasForeignKey(t => t.AssigneeMembershipId);
+
             // Unique constraints and relationships can be further configured here as needed
             // Example: modelBuilder.Entity<Company>().HasIndex(c => c.Slug).IsUnique();
 
