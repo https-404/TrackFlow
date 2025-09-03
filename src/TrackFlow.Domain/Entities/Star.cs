@@ -6,10 +6,9 @@ namespace TrackFlow.Domain.Entities
     {
         public Guid Id { get; set; }
         public Guid UserId { get; set; }
-        public string EntityType { get; set; } // ENUM: project, ticket
+        public required string EntityType { get; set; } // ENUM: project, ticket
         public Guid EntityId { get; set; }
         public DateTime CreatedAt { get; set; }
-
-        public User User { get; set; }
+        public User? User { get; set; }
     }
 }

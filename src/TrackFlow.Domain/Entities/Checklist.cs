@@ -7,11 +7,10 @@ namespace TrackFlow.Domain.Entities
     {
         public Guid Id { get; set; }
         public Guid TicketId { get; set; }
-        public string Title { get; set; }
+        public required string Title { get; set; }
         public int Position { get; set; }
-
-        public Ticket Ticket { get; set; }
-        public ICollection<ChecklistItem> Items { get; set; }
+        public Ticket? Ticket { get; set; }
+        public ICollection<ChecklistItem> Items { get; set; } = new List<ChecklistItem>();
     }
 }
 

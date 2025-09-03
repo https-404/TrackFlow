@@ -4,10 +4,9 @@ namespace TrackFlow.Domain.Entities
 {
     public class ProjectCounter
     {
-        public Guid ProjectId { get; set; }
-        public int NextTicketNumber { get; set; }
-
-        public Project Project { get; set; }
+        public required Guid ProjectId { get; set; }
+        public required int NextTicketNumber { get; set; }
+        public Project? Project { get; set; }
     }
 }
 

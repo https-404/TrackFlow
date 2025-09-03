@@ -8,11 +8,11 @@ namespace TrackFlow.Domain.Entities
     public class FileObject
     {
         public Guid Id { get; set; }
-        public string Sha256Hex { get; set; } = string.Empty; // UNIQUE
+        public required string Sha256Hex { get; set; } // UNIQUE
         public long ByteSize { get; set; }
-        public string ContentType { get; set; } = string.Empty;
+        public required string ContentType { get; set; }
         public StorageProvider StorageProvider { get; set; }
-        public string StorageKey { get; set; } = string.Empty;
+        public required string StorageKey { get; set; }
         public DateTime CreatedAt { get; set; }
         public int? WidthPx { get; set; }
         public int? HeightPx { get; set; }

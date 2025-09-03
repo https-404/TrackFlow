@@ -6,11 +6,10 @@ namespace TrackFlow.Domain.Entities
     {
         public Guid Id { get; set; }
         public Guid ChecklistId { get; set; }
-        public string Title { get; set; }
+        public required string Title { get; set; }
         public bool IsDone { get; set; } = false;
         public int Position { get; set; }
-
-        public Checklist Checklist { get; set; }
+        public Checklist? Checklist { get; set; }
     }
 }
 
