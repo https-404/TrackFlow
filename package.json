@@ -7,7 +7,7 @@
     "build": "dotnet build",
     "start": "dotnet run --project src/TrackFlow.Api",
     "test": "dotnet test",
-    "migrate": "dotnet ef database update --project src/TrackFlow.Infrastructure --startup-project src/TrackFlow.Api",
+    "migrate": "dotnet ef database update --project src/TrackFlow.Infrastructure --startup-project src/TrackFlow.Api --verbose",
     "add-migration": "dotnet ef migrations add"
   },
   "author": "",
